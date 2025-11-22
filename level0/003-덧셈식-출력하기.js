@@ -5,3 +5,4 @@ function solution() {
   return `${a} + ${b} = ${c}`;
 }
 console.log(solution());
+

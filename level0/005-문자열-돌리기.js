@@ -14,3 +14,5 @@ rl.on("line", function (line) {
     console.log(str[i]);
   }
 });
+
+// for문 사용시 한 줄씩 출력 
