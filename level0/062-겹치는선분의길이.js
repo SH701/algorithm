@@ -1,8 +1,21 @@
 function solution(lines) {
   let diff = 0;
-  if (lines[0][(0, 1)] - lines[1][(1, 0)] > 0) {
-    diff = lines[0][(0, 1)] - lines[1][(1, 0)];
+  const min = Math.min(...lines.map((line) => line[0]));
+  const max = Math.max(...lines.map((line) => line[1]));
+  for (let x = min; x < max; x++) {
+    let count = 0;
+
+    for (const [start, end] of lines) {
+      if (x >= start && x < end) {
+        count++;
+      }
+    }
+
+    if (count >= 2) {
+      diff++;
+    }
   }
+
   return diff;
 }
 console.log(
