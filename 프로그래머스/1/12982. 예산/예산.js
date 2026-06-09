@@ -1,11 +1,12 @@
 function solution(d, budget) {
-  d.sort((a, b) => a - b);
-  let sum = 0;
-  let count = 0;
-  for (let i of d) {
-    if (sum + i > budget) break;
-    sum += i;
-    count++;
-  }
-  return count;
+    let count = 0
+   d.sort((a, b) => a - b);
+    for(let i=0;i<d.length;i++){
+        if(budget<d[i]){
+            break
+        }
+        budget = budget - d[i]
+        count++
+    }
+    return count
 }
